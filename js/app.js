@@ -27,6 +27,7 @@ document.getElementById('detail-submit-btn').addEventListener('click', function(
     }
     buyerInfo.innerText = buyerDetailsInput.value;
 
+    // Clear input field after click submit button
     buyerDetailsInput.value = "";
 });
 
@@ -53,7 +54,8 @@ document.getElementById('add-details-btn').addEventListener('click', function() 
     grandTotal.innerText = add(tax.innerText, subTotal.innerText);
     grandTotal2.innerText = grandTotal.innerText;
 
-    // itemName.value = "";
-    // itemPrice.value = "";
-    // itemQuantity.value = "";
+    // Clear input field after click add button
+    itemName.value = "";
+    itemPrice.value = "";
+    itemQuantity.value = "";
 })
