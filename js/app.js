@@ -36,7 +36,7 @@ document.getElementById('add-details-btn').addEventListener('click', function() 
     <td>${totalQuantityPrice}</td>`
     tbody.appendChild(tr)
     subTotal.innerText = add(subTotal.innerText, totalQuantityPrice);
-    tax.innerText = multiply(subTotal.innerText, .2);
+    tax.innerText = multiply(subTotal.innerText, .2).toFixed(2);
     grandTotal.innerText = add(tax.innerText, subTotal.innerText);
     grandTotal2.innerText = grandTotal.innerText;
 
