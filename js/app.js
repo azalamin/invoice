@@ -21,12 +21,25 @@ const grandTotal2 = addFunc('grand-total-2');
 document.getElementById('detail-submit-btn').addEventListener('click', function() {
     const buyerDetailsInput = addFunc('buyer-details-input');
     const buyerInfo = addFunc('buyer-info');
+    if (
+        buyerDetailsInput.value == "") {
+        alert("Input cannot be empty or number cannot be negative")
+    }
     buyerInfo.innerText = buyerDetailsInput.value;
 
     buyerDetailsInput.value = "";
 });
 
 document.getElementById('add-details-btn').addEventListener('click', function() {
+    if (
+        itemName.value == "" ||
+        itemPrice.value < 0 ||
+        itemQuantity.value < 0 ||
+        itemPrice.value == "" ||
+        itemQuantity.value == ""
+    ) {
+        alert("Input cannot be empty or number cannot be negative")
+    }
     const tbody = addFunc('info-table');
     const totalQuantityPrice = multiply(itemPrice.value, itemQuantity.value);
     const tr = document.createElement('tr');
@@ -40,7 +53,7 @@ document.getElementById('add-details-btn').addEventListener('click', function() 
     grandTotal.innerText = add(tax.innerText, subTotal.innerText);
     grandTotal2.innerText = grandTotal.innerText;
 
-    itemName.value = "";
-    itemPrice.value = "";
-    itemQuantity.value = "";
+    // itemName.value = "";
+    // itemPrice.value = "";
+    // itemQuantity.value = "";
 })
